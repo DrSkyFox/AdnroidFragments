@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cities">
+        <item>Пекин</item>
+        <item>Москва</item>
+        <item>Вашингтон</item>
+        <item>Токио</item>
+    </string-array>
+
+    <integer-array name="coats_of_arms_image">
+        <item>@drawable/oil</item>
+        <item>@drawable/usa</item>
+        <item>@drawable/vir</item>
+        <item>@drawable/vit</item>
+    </integer-array>
+
+</resources>
