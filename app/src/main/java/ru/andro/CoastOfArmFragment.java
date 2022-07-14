@@ -80,6 +80,7 @@ public class CoastOfArmFragment extends Fragment {
             TypedArray images = getResources().obtainTypedArray(R.array.coats_of_arms_image);
 
             imageView.setImageResource(images.getResourceId(index,0));
+
             images.recycle();
         }
     }
