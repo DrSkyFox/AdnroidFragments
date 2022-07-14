@@ -3,6 +3,7 @@ package ru.andro;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -12,10 +13,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.i(this.getClass().getName(),"start");
+        Log.i(this.getClass().getName(), "start");
 
         CitiesFragment citiesFragment = new CitiesFragment();
 
+
+//        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+//            getSupportFragmentManager()
+//                    .beginTransaction()
+//                    .replace(R.id.coats_of_arms_image_container, CoastOfArmFragment.newInstance(0))
+//                    .commit();
+//        } else {
+//            getSupportFragmentManager()
+//                    .beginTransaction()
+//                    .replace(R.id.fragment_container, citiesFragment)
+//                    .commit();
+//        }
 
 
         getSupportFragmentManager()
@@ -29,13 +42,22 @@ public class MainActivity extends AppCompatActivity {
 //        myConf.length =200;
 //
 //        IConfFluent config = new ConfigurationFluent().SetColor("black").SetHeight(100).SetLength(200);
-
     }
+
+
+    private boolean isLandscape() {
+        return getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
+    }
+
+
 }
+
 
 interface IConfig {
     String color();
+
     int height();
+
     int length();
 
 }
@@ -64,7 +86,9 @@ class MyConf implements IConfig {
 
 interface IConfFluent {
     IConfFluent SetColor(String color);
+
     IConfFluent SetHeight(int height);
+
     IConfFluent SetLength(int length);
 }
 
